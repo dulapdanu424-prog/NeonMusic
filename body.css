@@ -1,0 +1,90 @@
+/* Фон и общий стиль */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: radial-gradient(circle at top, #0d0d0d, #000);
+  color: #fff;
+  text-align: center;
+}
+
+/* Заголовок */
+h1 {
+  font-size: 2.5rem;
+  margin: 20px 0;
+  color: #ff00ff;
+  text-shadow: 0 0 15px #ff00ff, 0 0 30px #00ffff;
+  animation: glow 3s infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffff;
+  }
+  to {
+    text-shadow: 0 0 20px #00ffff, 0 0 40px #ff00ff;
+  }
+}
+
+/* Сетка */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Каждая колонка */
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Трек */
+.track {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid transparent;
+  border-radius: 15px;
+  padding: 15px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 0, 255, 0.2);
+}
+
+.track:hover {
+  border-color: #ff00ff;
+  box-shadow: 0 0 20px #ff00ff, 0 0 40px #00ffff;
+  transform: translateY(-5px);
+}
+
+/* Названия песен */
+.track h2 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #00ffff;
+  text-shadow: 0 0 5px #00ffff, 0 0 10px #ff00ff;
+}
+
+/* Аудио-плеер */
+audio {
+  width: 100%;
+  filter: drop-shadow(0 0 5px #ff00ff);
+}
+
+/* 📱 Адаптив */
+@media (max-width: 1200px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
